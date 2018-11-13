@@ -9,6 +9,3 @@ site/
 README.rst
 .cache/
 __pycache__
-crawler_cache/
-ctl/
-logs/
