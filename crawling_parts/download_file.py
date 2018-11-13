@@ -394,7 +394,7 @@ def generate_dataset(results):
                              "Description": field_desc})
 
 
-@Throttle(minutes=1, rate=20, max_tokens=20)
+@Throttle(minutes=1, rate=50, max_tokens=50)
 def download_file(
         cache_folder,
         ccvm, fiscal_date, version, doc_type, protocol,

@@ -56,7 +56,7 @@ def has_letter(letter):
         return letter in current_letters
 
 
-@Throttle(minutes=1, rate=20, max_tokens=20)
+@Throttle(minutes=1, rate=50, max_tokens=50)
 def update_listed_companies(letter, phantomjs_path):
     driver = None
     try:

@@ -161,7 +161,7 @@ def extract_company_files_from_page(
     return files
 
 
-@Throttle(minutes=1, rate=20, max_tokens=20)
+@Throttle(minutes=1, rate=50, max_tokens=50)
 def obtain_company_files(
         phantomjs_path, ccvm, doc_type, from_date=None):
     """
