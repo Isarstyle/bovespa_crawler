@@ -1,0 +1,4 @@
+python-dateutil>=2
+selenium>=3
+beautifulsoup4>=4
+xmljson>=0.1

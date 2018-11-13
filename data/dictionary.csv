@@ -1,0 +1,276 @@
+Field,Description
+ccvm,Company Bovespa Code
+period,Date of the financial data
+version,Delivered version
+1.89.01,QuantidadeAcaoOrdinariaCapitalIntegralizado
+1.89.02,QuantidadeAcaoPreferencialCapitalIntegralizado
+1.89.03,QuantidadeTotalAcaoCapitalIntegralizado
+1.89.04,QuantidadeAcaoOrdinariaTesouraria
+1.89.05,QuantidadeAcaoPreferencialTesouraria
+1.89.06,QuantidadeTotalAcaoTesouraria
+1,Ativo Total
+1.01,Ativo Circulante
+1.01.01,Caixa e Equivalentes de Caixa
+1.01.02,Aplicações Financeiras
+1.01.02.01,Aplicações Financeiras Avaliadas a Valor Justo
+1.01.02.01.01,Títulos para Negociação
+1.01.02.01.02,Títulos Disponíveis para Venda
+1.01.02.02,Aplicações Financeiras Avaliadas ao Custo Amortizado
+1.01.02.02.01,Títulos Mantidos até o Vencimento
+1.01.03,Contas a Receber
+1.01.03.01,Clientes
+1.01.03.02,Outras Contas a Receber
+1.01.04,Estoques
+1.01.05,Ativos Biológicos
+1.01.06,Tributos a Recuperar
+1.01.06.01,Tributos Correntes a Recuperar
+1.01.07,Despesas Antecipadas
+1.01.08,Outros Ativos Circulantes
+1.01.08.01,Ativos Não-Correntes a Venda
+1.01.08.02,Ativos de Operações Descontinuadas
+1.01.08.03,Outros
+1.02,Ativo Não Circulante
+1.02.01,Ativo Realizável a Longo Prazo
+1.02.01.01,Aplicações Financeiras Avaliadas a Valor Justo
+1.02.01.01.01,Títulos para Negociação
+1.02.01.01.02,Títulos Disponíveis para Venda
+1.02.01.02,Aplicações Financeiras Avaliadas ao Custo Amortizado
+1.02.01.02.01,Títulos Mantidos até o Vencimento
+1.02.01.03,Contas a Receber
+1.02.01.03.01,Clientes
+1.02.01.03.02,Outras Contas a Receber
+1.02.01.04,Estoques
+1.02.01.05,Ativos Biológicos
+1.02.01.06,Tributos Diferidos
+1.02.01.06.01,Imposto de Renda e Contribuição Social Diferidos
+1.02.01.07,Despesas Antecipadas
+1.02.01.08,Créditos com Partes Relacionadas
+1.02.01.08.01,Créditos com Coligadas
+1.02.01.08.02,Créditos com Controladas
+1.02.01.08.03,Créditos com Controladores
+1.02.01.08.04,Créditos com Outras Partes Relacionadas
+1.02.01.09,Outros Ativos Não Circulantes
+1.02.01.09.01,Ativos Não-Correntes a Venda
+1.02.01.09.02,Ativos de Operações Descontinuadas
+1.02.02,Investimentos
+1.02.02.01,Participações Societárias
+1.02.02.01.01,Participações em Coligadas
+1.02.02.01.02,Participações em Controladas
+1.02.02.01.03,Participações em Controladas em Conjunto
+1.02.02.01.04,Outras Participações Societárias
+1.02.02.02,Propriedades para Investimento
+1.02.03,Imobilizado
+1.02.03.01,Imobilizado em Operação
+1.02.03.02,Imobilizado Arrendado
+1.02.03.03,Imobilizado em Andamento
+1.02.04,Intangível
+1.02.04.01,Intangíveis
+1.02.04.01.01,Contrato de Concessão
+1.02.05,Diferido
+2,Passivo Total
+2.01,Passivo Circulante
+2.01.01,Obrigações Sociais e Trabalhistas
+2.01.01.01,Obrigações Sociais
+2.01.01.02,Obrigações Trabalhistas
+2.01.02,Fornecedores
+2.01.02.01,Fornecedores Nacionais
+2.01.02.02,Fornecedores Estrangeiros
+2.01.03,Obrigações Fiscais
+2.01.03.01,Obrigações Fiscais Federais
+2.01.03.01.01,Imposto de Renda e Contribuição Social a Pagar
+2.01.03.02,Obrigações Fiscais Estaduais
+2.01.03.03,Obrigações Fiscais Municipais
+2.01.04,Empréstimos e Financiamentos
+2.01.04.01,Empréstimos e Financiamentos
+2.01.04.01.01,Em Moeda Nacional
+2.01.04.01.02,Em Moeda Estrangeira
+2.01.04.02,Debêntures
+2.01.04.03,Financiamento por Arrendamento Financeiro
+2.01.05,Outras Obrigações
+2.01.05.01,Passivos com Partes Relacionadas
+2.01.05.01.01,Débitos com Coligadas
+2.01.05.01.02,Débitos com Controladas
+2.01.05.01.03,Débitos com Controladores
+2.01.05.01.04,Débitos com Outras Partes Relacionadas
+2.01.05.02,Outros
+2.01.05.02.01,Dividendos e JCP a Pagar
+2.01.05.02.02,Dividendo Mínimo Obrigatório a Pagar
+2.01.05.02.03,Obrigações por Pagamentos Baseados em Ações
+2.01.06,Provisões
+2.01.06.01,Provisões Fiscais Previdenciárias Trabalhistas e Cíveis
+2.01.06.01.01,Provisões Fiscais
+2.01.06.01.02,Provisões Previdenciárias e Trabalhistas
+2.01.06.01.03,Provisões para Benefícios a Empregados
+2.01.06.01.04,Provisões Cíveis
+2.01.06.02,Outras Provisões
+2.01.06.02.01,Provisões para Garantias
+2.01.06.02.02,Provisões para Reestruturação
+2.01.06.02.03,Provisões para Passivos Ambientais e de Desativação
+2.01.07,Passivos sobre Ativos Não-Correntes a Venda e Descontinuados
+2.01.07.01,Passivos sobre Ativos Não-Correntes a Venda
+2.01.07.02,Passivos sobre Ativos de Operações Descontinuadas
+2.02,Passivo Não Circulante
+2.02.01,Empréstimos e Financiamentos
+2.02.01.01,Empréstimos e Financiamentos
+2.02.01.01.01,Em Moeda Nacional
+2.02.01.01.02,Em Moeda Estrangeira
+2.02.01.02,Debêntures
+2.02.01.03,Financiamento por Arrendamento Financeiro
+2.02.02,Outras Obrigações
+2.02.02.01,Passivos com Partes Relacionadas
+2.02.02.01.01,Débitos com Coligadas
+2.02.02.01.02,Débitos com Controladas
+2.02.02.01.03,Débitos com Controladores
+2.02.02.01.04,Débitos com Outras Partes Relacionadas
+2.02.02.02,Outros
+2.02.02.02.01,Obrigações por Pagamentos Baseados em Ações
+2.02.02.02.02,Adiantamento para Futuro Aumento de Capital
+2.02.03,Tributos Diferidos
+2.02.03.01,Imposto de Renda e Contribuição Social Diferidos
+2.02.04,Provisões
+2.02.04.01,Provisões Fiscais Previdenciárias Trabalhistas e Cíveis
+2.02.04.01.01,Provisões Fiscais
+2.02.04.01.02,Provisões Previdenciárias e Trabalhistas
+2.02.04.01.03,Provisões para Benefícios a Empregados
+2.02.04.01.04,Provisões Cíveis
+2.02.04.02,Outras Provisões
+2.02.04.02.01,Provisões para Garantias
+2.02.04.02.02,Provisões para Reestruturação
+2.02.04.02.03,Provisões para Passivos Ambientais e de Desativação
+2.02.05,Passivos sobre Ativos Não-Correntes a Venda e Descontinuados
+2.02.05.01,Passivos sobre Ativos Não-Correntes a Venda
+2.02.05.02,Passivos sobre Ativos de Operações Descontinuadas
+2.02.06,Lucros e Receitas a Apropriar
+2.02.06.01,Lucros a Apropriar
+2.02.06.02,Receitas a Apropriar
+2.02.06.03,Subvenções de Investimento a Apropriar
+2.03,Patrimônio Líquido
+2.03.01,Capital Social Realizado
+2.03.02,Reservas de Capital
+2.03.02.01,Ágio na Emissão de Ações
+2.03.02.02,Reserva Especial de Ágio na Incorporação
+2.03.02.03,Alienação de Bônus de Subscrição
+2.03.02.04,Opções Outorgadas
+2.03.02.05,Ações em Tesouraria
+2.03.02.06,Adiantamento para Futuro Aumento de Capital
+2.03.03,Reservas de Reavaliação
+2.03.04,Reservas de Lucros
+2.03.04.01,Reserva Legal
+2.03.04.02,Reserva Estatutária
+2.03.04.03,Reserva para Contingências
+2.03.04.04,Reserva de Lucros a Realizar
+2.03.04.05,Reserva de Retenção de Lucros
+2.03.04.06,Reserva Especial para Dividendos Não Distribuídos
+2.03.04.07,Reserva de Incentivos Fiscais
+2.03.04.08,Dividendo Adicional Proposto
+2.03.04.09,Ações em Tesouraria
+2.03.05,Lucros/Prejuízos Acumulados
+2.03.06,Ajustes de Avaliação Patrimonial
+2.03.07,Ajustes Acumulados de Conversão
+2.03.08,Outros Resultados Abrangentes
+3.01,Receita de Venda de Bens e/ou Serviços
+3.02,Custo dos Bens e/ou Serviços Vendidos
+3.03,Resultado Bruto
+3.04,Despesas/Receitas Operacionais
+3.04.01,Despesas com Vendas
+3.04.02,Despesas Gerais e Administrativas
+3.04.03,Perdas pela Não Recuperabilidade de Ativos
+3.04.04,Outras Receitas Operacionais
+3.04.05,Outras Despesas Operacionais
+3.04.06,Resultado de Equivalência Patrimonial
+3.05,Resultado Antes do Resultado Financeiro e dos Tributos
+3.06,Resultado Financeiro
+3.06.01,Receitas Financeiras
+3.06.02,Despesas Financeiras
+3.07,Resultado Antes dos Tributos sobre o Lucro
+3.08,Imposto de Renda e Contribuição Social sobre o Lucro
+3.08.01,Corrente
+3.08.02,Diferido
+3.09,Resultado Líquido das Operações Continuadas
+3.1,Resultado Líquido de Operações Descontinuadas
+3.10.01,Lucro/Prejuízo Líquido das Operações Descontinuadas
+3.10.02,Ganhos/Perdas Líquidas sobre Ativos de Operações Descontinuadas
+3.11,Lucro/Prejuízo do Período
+3.99,Lucro por Ação - (Reais / Ação)
+3.99.01,Lucro Básico por Ação
+3.99.01.01,ON
+3.99.02,Lucro Diluído por Ação
+3.99.02.01,ON
+4.01,Lucro Líquido do Período
+4.02,Outros Resultados Abrangentes
+4.03,Resultado Abrangente do Período
+6.01,Caixa Líquido Atividades Operacionais
+6.01.01,Caixa Gerado nas Operações
+6.01.02,Variações nos Ativos e Passivos
+6.01.03,Outros
+6.02,Caixa Líquido Atividades de Investimento
+6.03,Caixa Líquido Atividades de Financiamento
+6.04,Variação Cambial s/ Caixa e Equivalentes
+6.05,Aumento (Redução) de Caixa e Equivalentes
+6.05.01,Saldo Inicial de Caixa e Equivalentes
+6.05.02,Saldo Final de Caixa e Equivalentes
+7.01,Receitas
+7.01.01,"Vendas de Mercadorias, Produtos e Serviços"
+7.01.02,Outras Receitas
+7.01.03,Receitas refs. à Construção de Ativos Próprios
+7.01.04,Provisão/Reversão de Créds. Liquidação Duvidosa
+7.02,Insumos Adquiridos de Terceiros
+7.02.01,"Custos Prods., Mercs. e Servs. Vendidos"
+7.02.02,"Materiais, Energia, Servs. de Terceiros e Outros"
+7.02.03,Perda/Recuperação de Valores Ativos
+7.02.04,Outros
+7.03,Valor Adicionado Bruto
+7.04,Retenções
+7.04.01,"Depreciação, Amortização e Exaustão"
+7.04.02,Outras
+7.05,Valor Adicionado Líquido Produzido
+7.06,Vlr Adicionado Recebido em Transferência
+7.06.01,Resultado de Equivalência Patrimonial
+7.06.02,Receitas Financeiras
+7.06.03,Outros
+7.07,Valor Adicionado Total a Distribuir
+7.08,Distribuição do Valor Adicionado
+7.08.01,Pessoal
+7.08.01.01,Remuneração Direta
+7.08.01.02,Benefícios
+7.08.01.03,F.G.T.S.
+7.08.01.04,Outros
+7.08.02,"Impostos, Taxas e Contribuições"
+7.08.02.01,Federais
+7.08.02.02,Estaduais
+7.08.02.03,Municipais
+7.08.03,Remuneração de Capitais de Terceiros
+7.08.03.01,Juros
+7.08.03.02,Aluguéis
+7.08.03.03,Outras
+7.08.04,Remuneração de Capitais Próprios
+7.08.04.01,Juros sobre o Capital Próprio
+7.08.04.02,Dividendos
+7.08.04.03,Lucros Retidos / Prejuízo do Período
+7.08.05,Outros
+5.01,Saldos Iniciais
+5.02,Ajustes de Exercícios Anteriores
+5.03,Saldos Iniciais Ajustados
+5.04,Transações de Capital com os Sócios
+5.04.01,Aumentos de Capital
+5.04.02,Gastos com Emissão de Ações
+5.04.03,Opções Outorgadas Reconhecidas
+5.04.04,Ações em Tesouraria Adquiridas
+5.04.05,Ações em Tesouraria Vendidas
+5.04.06,Dividendos
+5.04.07,Juros sobre Capital Próprio
+5.05,Resultado Abrangente Total
+5.05.01,Lucro Líquido do Período
+5.05.02,Outros Resultados Abrangentes
+5.05.02.01,Ajustes de Instrumentos Financeiros
+5.05.02.02,Tributos s/ Ajustes Instrumentos Financeiros
+5.05.02.03,Equiv. Patrim. s/Result. Abrang. Controladas e Coligadas
+5.05.02.04,Ajustes de Conversão do Período
+5.05.02.05,Tributos s/ Ajustes de Conversão do Período
+5.05.03,Reclassificações para o Resultado
+5.05.03.01,Ajustes de Instrumentos Financeiros
+5.06,Mutações Internas do Patrimônio Líquido
+5.06.01,Constituição de Reservas
+5.06.02,Realização da Reserva Reavaliação
+5.06.03,Tributos sobre a Realização da Reserva de Reavaliação
+5.07,Saldos Finais
