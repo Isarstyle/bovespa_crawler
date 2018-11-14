@@ -329,7 +329,8 @@ def extract_file_content(cache_folder,
                          fiscal_date,
                          version,
                          doc_type,
-                         file):
+                         file,
+                         force_extraction):
     """Extract the files from the ENER zip file and the ITR/DFP inside of it,
     and collect all the XML files
     """
@@ -338,13 +339,20 @@ def extract_file_content(cache_folder,
         ccvm, fiscal_date, version.replace(".", ""), doc_type)
 
     dest_path = pathlib.Path(cache_folder, ccvm, "exploded", filename)
-    if not dest_path.exists():
+
+    if dest_path.exists():
+        if force_extraction:
+            # Clean the folder to explode the new content
+            delete_all(dest_path)
+            files_ref = extract_zip(file, dest_path)
+        else:
+            files_ref = []
+            for the_file in os.listdir(dest_path):
+                if pathlib.Path(dest_path, the_file).is_file():
+                    files_ref.append(os.path.join(dest_path, the_file))
+    else:
         dest_path.mkdir(parents=True, exist_ok=True)
-
-    # Clean the folder to explode the new content
-    delete_all(dest_path)
-
-    files_ref = extract_zip(file, dest_path)
+        files_ref = extract_zip(file, dest_path)
 
     available_files = {}
 
@@ -394,7 +402,7 @@ def generate_dataset(results):
                              "Description": field_desc})
 
 
-@Throttle(minutes=1, rate=50, max_tokens=50)
+@Throttle(minutes=1, rate=20, max_tokens=20)
 def download_file(
         cache_folder,
         ccvm, fiscal_date, version, doc_type, protocol,
@@ -431,7 +439,8 @@ def download_file(
     update_download_files_checkpoint(ccvm, str(file))
 
     financial_files = extract_file_content(
-        cache_folder, ccvm, fiscal_date, version, doc_type, file)
+        cache_folder, ccvm, fiscal_date,
+        version, doc_type, file, force_download)
 
     company_info, headers_info = load_account_details(
         financial_files, ccvm, fiscal_date, version, doc_type)
@@ -462,8 +471,6 @@ def download_files(cache_folder,
 
                 filename = "CCVM_{0}_{1:%Y%m%d}_{2}.{3}".format(
                     ccvm, fiscal_date, version.replace(".",""), doc_type)
-
-                file = pathlib.Path(cache_folder, ccvm, filename)
 
                 func_params.append([
                     cache_folder, ccvm, fiscal_date, version,

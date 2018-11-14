@@ -135,7 +135,7 @@ Now the crawler should be ready to run.
 
 ### Run the crawler
 
-To run the crawler we only need to run th `crawl.py` file. The crawler can be invoked using the following config parameters:
+To run the crawler we only need to run the `crawl.py` script. The crawler can be invoked using the following config parameters:
 
 Arguments:
 
@@ -189,7 +189,7 @@ python crawl.py \
     
 ## Dataset
 
-The dataset has been generated using 4200 companies and from 12296 financial reports.
+The dataset has been generated using 5134 companies and 14018 financial reports.
 
 Dataset: [dataset.csv](./data/dataset.csv)
 

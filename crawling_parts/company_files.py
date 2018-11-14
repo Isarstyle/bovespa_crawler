@@ -14,7 +14,7 @@ from dateutil.parser import parse as date_parse
 from bs4 import BeautifulSoup
 
 from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -77,7 +77,7 @@ def has_ccvm(ccvm_code, doc_type):
 
 
 def extract_company_files_from_page(
-        driver, bs, doc_type="ITR", from_date=None):
+        ccvm, driver, bs, doc_type="ITR", from_date=None):
     """
     Extract all the files to download from the listing HTML page
 
@@ -99,7 +99,13 @@ def extract_company_files_from_page(
     company_cnpj = re.search(RE_CNPJ, str(bs))[1].strip().lower()
 
     # Get the number of files we should expect to find for the company
-    num_of_docs = int(re.search(RE_TOTAL_FILES, str(bs))[1])
+    try:
+        num_of_docs = int(re.search(RE_TOTAL_FILES, str(bs))[1])
+    except:
+        _logger.warning("There is no files information in the companies "
+                        "files page for [{ccvm} - {doc_type}] ".
+                        format(ccvm=ccvm, doc_type=doc_type))
+        return files
 
     while True:
 
@@ -190,8 +196,17 @@ def obtain_company_files(
         # We control that the page is loaded looking for an element with
         # id = "AIR" in the page
         driver.get(url)
-        WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.NAME, 'AIR')))
+        try:
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located((By.NAME, 'AIR')))
+        except TimeoutException:
+            WebDriverWait(driver, 10).until(
+                EC.title_contains("CBLCNET -"))
+            _logger.warning(
+                "There is no documents page for company {ccvm} "
+                "and {doc_type}. Showing 'Error de Aplicacao'".
+                    format(ccvm=ccvm, doc_type=doc_type))
+            return files
 
         # Once the page is ready, we can select the doc_type from the list
         # of documentation available and navigate to the results page
@@ -200,13 +215,22 @@ def obtain_company_files(
         element.click()
 
         # Wait until the page is loaded
-        WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located(
-                (By.XPATH, "//form[@name='AIR']/table/*")))
+        try:
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located(
+                    (By.XPATH, "//form[@name='AIR']/table/*")))
+        except TimeoutException:
+            WebDriverWait(driver, 10).until(
+                EC.title_contains("CBLCNET -"))
+            _logger.warning(
+                "There is no documents page for company {ccvm} "
+                "and {doc_type}. Showing 'Error de Aplicacao'".
+                    format(ccvm=ccvm, doc_type=doc_type))
+            return files
 
         bs = BeautifulSoup(driver.page_source, "html.parser")
         files = extract_company_files_from_page(
-            driver, bs, doc_type=doc_type, from_date=from_date)
+            ccvm, driver, bs, doc_type=doc_type, from_date=from_date)
 
         # Set checkpoint to the current ccvm code as a
         # company already processed
@@ -267,6 +291,8 @@ def crawl_company_files(
         _logger.debug(
             "Processing the files of {} companies".format(len(ccvm_codes)))
 
+        current_companies = get_control_file(FILES_BY_COMPANY_CTL, {})
+
         func_params = []
         for ccvm in ccvm_codes:
             for doc_type in doc_types:
@@ -275,18 +301,16 @@ def crawl_company_files(
                 if include_companies and ccvm not in include_companies:
                     continue
 
+                key = "{0}_{1}".format(ccvm, doc_type)
                 # Use checkpoint to check if the company was already crawled
-                if not has_ccvm(ccvm, doc_type):
+                if not key in current_companies.keys():
                     func_params.append([
                         phantomjs_path, ccvm, doc_type, from_date])
                 else:
                     _logger.debug("Getting the files from the cache")
-                    current_company_files = \
-                        get_control_file(FILES_BY_COMPANY_CTL, {})
-                    key = "{0}_{1}".format(ccvm, doc_type)
-                    if key in current_company_files.keys():
+                    if key in current_companies.keys():
                         company_files_already_crawled += \
-                            current_company_files[key]
+                            current_companies[key]
 
         call_results = pool.starmap(obtain_company_files, func_params)
 
